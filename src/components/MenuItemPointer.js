@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
-import PropTypes from 'prop-types';
 
 function MenuItemPointer(props) {
   const mediaQueryMaxW = window.matchMedia('(max-width: 400px)');
@@ -12,12 +11,14 @@ function MenuItemPointer(props) {
   const setStyleProps = () => {
     var refItem = (typeof props.activeItemRef === 'string') ? document.getElementById(props.activeItemRef) : props.activeItemRef;
     var color = window.getComputedStyle(refItem).getPropertyValue('background-color');
+    var property, position;
+    
     if (isVertical) {
-      var property = 'top';
-      var position = refItem.offsetTop;
+      property = 'top';
+      position = refItem.offsetTop;
     } else {
-      var property = 'left';
-      var position = refItem.offsetLeft;
+      property = 'left';
+      position = refItem.offsetLeft;
     }
     
     setStyle({
@@ -43,10 +44,6 @@ function MenuItemPointer(props) {
     <span className='menu-item--active' style={style}/>
   )
 }
-
-MenuItemPointer.propTypes = {
-  activeItemRef: PropTypes.string.isRequired
-};
 
 MenuItemPointer.defaultProps = {
   activeItemRef: document.getElementById('plants')

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function PlantItem(props) {
-  const API = 'http://plant-data-provider.herokuapp.com/';
+  const API = 'https://plant-data-provider.herokuapp.com/';
 
   return (
     <div className='plant-item' id={props.item.name} onClick={props.handleClick(props.item.name)}>

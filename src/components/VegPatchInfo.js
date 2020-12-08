@@ -10,7 +10,7 @@ function VegPatchInfo(props) {
     const editButtonToggle = { false: "Edytuj", true: "Zapisz" };
     const addButtonToggle = { false: "Dodaj", true: "Wróć" };
 
-    useEffect(() => { props.sendLeftPanel(saveOn) }, [saveOn]);
+    useEffect(() => { props.sendLeftPanel(saveOn) }, [saveOn, props.sendLeftPanel]);
 
     const toggleState = (state, stateSetter) => {
         if (state) {

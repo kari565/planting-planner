@@ -4,7 +4,7 @@ import axios from 'axios';
 import MenuContainer from './MenuContainer';
 import Content from './Content';
 
-const API = 'http://plant-data-provider.herokuapp.com/';
+const API = 'https://plant-data-provider.herokuapp.com/';
 const DEFAULT_QUERY = 'data';
 const UPDATE_QUERY = 'update-data'
 

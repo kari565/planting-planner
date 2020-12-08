@@ -16,11 +16,10 @@ function VegPatchDetails(props) {
     const [node, setNode] = useState();
     const [patch, setPatch] = useState(JSON.parse(JSON.stringify(props.patch)));
 
-    const handleResize = () => setPxMultiplier(node.getBoundingClientRect().width / props.patch.width * 0.8)
-
     useEffect(() => { setTotalFulfillment(sumFulfillment()); }, [patch]);
 
     const leftPanel = useCallback(node => {
+        function handleResize() { setPxMultiplier(node.getBoundingClientRect().width / props.patch.width * 0.8) }
         if (node) {
             setNode(node);
             setPxMultiplier(node.getBoundingClientRect().width / props.patch.width * 0.8);
@@ -29,7 +28,7 @@ function VegPatchDetails(props) {
         } else {
             window.removeEventListener("resize", handleResize);
         }
-    }, [node]);
+    }, [node, props.patch.width]);
     
     const sumFulfillment = () => {
         if (fulfillment === "") {

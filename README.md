@@ -3,7 +3,7 @@
 The application can be used for vegetable planting managment.
 
 ## Deployed application:
-http://planting-planner.herokuapp.com/
+https://planting-planner.herokuapp.com/
 
 ## Technologies
 - React 16
