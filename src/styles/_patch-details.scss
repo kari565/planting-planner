@@ -1,0 +1,136 @@
+.vegPatchDetails {
+    display: flex;
+}
+
+.leftPanel {
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: calc(70% - 30px);
+    margin: 0 15px 30px !important;
+}
+
+.rightPanel {
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: calc(30% - 30px);
+    margin: 0 15px 30px !important;
+    color: $white;
+}
+
+@media (max-width: 1199px) {
+    .leftPanel {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+        flex: 0 0 60%;
+        max-width: calc(60% - 30px);
+        margin: 0 15px 30px !important;
+
+        .plant-list-container 
+            .plant-item {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: calc(50% - 30px);
+                margin: 0 15px 30px !important;
+        }
+
+        .season-list-container {
+            .season-item {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 33.33%;
+                flex: 0 0 33.33%;
+                max-width: calc(33.33% - 20px);
+                margin: 0 10px 15px;
+            }
+        }
+    }
+
+    .rightPanel {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+        flex: 0 0 40%;
+        max-width: calc(40% - 30px);
+        margin: 0 15px 30px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .leftPanel, .rightPanel {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: calc(50% - 30px);
+        margin: 0 15px 30px !important;
+
+        .season-list-container {
+            .season-item {
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: calc(50% - 20px);
+                margin: 0 10px 15px;
+            }
+        }
+    } 
+}
+
+@media (max-width: 750px) {
+    .vegPatchDetails {
+        flex-wrap: wrap-reverse;
+
+        .leftPanel, .rightPanel {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: calc(100% - 30px);
+            margin: 0 15px 30px !important; 
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .leftPanel, .rightPanel {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: calc(100% - 30px);
+        margin: 0 15px 30px !important;
+
+        .plant-list-container {
+                .plant-item {
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+                    max-width: calc(100% - 30px);
+                    margin: 0 15px 30px !important;
+            }
+        }
+
+        .season-list-container {
+            .season-item {
+                
+                -webkit-box-flex: 0;
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: calc(100% - 20px);
+                margin: 0 10px 15px;
+            }
+        }
+    }
+}
+
+.vegPatchInfo {
+    padding: 10px 10px;
+
+    .name {
+        text-align: center;
+    }
+
+    .fulfillment {
+        margin-bottom: 4px;
+    }
+}

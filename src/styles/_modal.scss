@@ -1,0 +1,39 @@
+.modal {
+    border-radius: 2px;
+    padding: 40px  40px 10px 40px;
+    position: fixed;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: lighten($bg, 5%);
+    color: $white;
+    box-shadow: 0 0px 50px hsla(0, 0, 0, 0.7);
+
+    .vegInfo {
+        display: flex;
+        margin-bottom: 2px;
+        width: 100%;
+        flex: 0 0 100%;
+
+        .left {
+            width: unset;
+            max-width: none;
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            text-align: left;
+            padding: 0.5em;
+        }
+
+        .right {
+            width: unset;
+            max-width: none;
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            padding: 0.5em;
+        }
+    }
+}

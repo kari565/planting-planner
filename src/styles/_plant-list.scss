@@ -1,0 +1,167 @@
+.theme-tab {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .theme-tab {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .theme-tab {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .theme-tab {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .theme-tab {
+        max-width: 1140px;
+    }
+}
+
+.theme-tab .title-tab {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+
+.season-list-container {
+    .season-item {
+        color: $primarycolor;
+        display: inline-block;
+        font-size: 19px;
+        height: 60px;
+        width: 100%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 20%;
+        flex: 0 0 20%;
+        max-width: calc(20% - 20px);
+        margin: 0 10px 20px;
+        line-height: 60px;
+        background: rgba(255,255,255,0.08);
+        letter-spacing: 3px;
+
+        &--active {
+            @extend .season-item;
+            color: lighten($primarycolor, 25%);
+            background: rgba(255,255,255,0.3);
+        }
+    }
+}
+
+.product-details {
+    max-width: 290px;
+    margin: 0 auto;
+}
+
+.product-detail, .product-name {
+    text-align: left;
+}
+
+.plant-list-container {
+    .plant-item {
+        width: 100%;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: calc(25% - 30px);
+        color: $white;
+        margin: 0 15px 30px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .plant-list-container 
+        .plant-item {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.33%;
+            flex: 0 0 33.33%;
+            max-width: calc(33.33% - 30px);
+            margin: 0 15px 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    .plant-list-container 
+        .plant-item {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: calc(50% - 30px);
+            margin: 0 15px 30px !important;
+    }
+
+    .season-list-container {
+        .season-item {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.33%;
+            flex: 0 0 33.33%;
+            max-width: calc(33.33% - 20px);
+            margin: 0 10px 15px;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .season-list-container {
+        .season-item {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: calc(50% - 20px);
+            margin: 0 10px 15px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .plant-list-container {
+        .plant-item {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: calc(100% - 30px);
+            margin: 0 15px 30px !important;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .season-list-container {
+        .season-item {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: calc(100% - 20px);
+            margin: 0 10px 10px;
+        }
+    }
+}
+
+.plant-item, .plant-wrap {
+    position: relative;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}

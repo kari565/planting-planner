@@ -1,0 +1,80 @@
+.menu-container {
+    box-shadow: 0 0px 50px hsla(0, 0, 0, 0.7);
+    position: relative;
+    transform: translate(0);
+    margin: 50px auto 100px auto;
+    width: $menu-width;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-item,
+.menu-item--active {
+    height: 60px;
+    width: 100%;
+}
+
+.menu-item {
+    align-items: center;
+    color: $white;
+    width: $menu-item-width;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    font-size: 24px;
+    justify-content: center;
+    letter-spacing: 4px;
+    text-align: center;
+    
+    &.active {
+        box-shadow: 0 2px 3px hsla(0, 0, 0, 0.7);
+    }
+  
+    &:nth-of-type(1) {
+        background: $primarycolor;
+    }
+    
+    &:nth-of-type(2) {
+        background: darken($primarycolor, 5%);
+    }
+
+    &:nth-of-type(3) {
+        background: darken($primarycolor, 10%);
+    }
+
+    &:nth-of-type(4) {
+        background: darken($primarycolor, 15%);
+    }
+
+    &:nth-of-type(5) {
+        background: darken($primarycolor, 20%);
+    }
+}
+
+.menu-item--active {
+  background: $primarycolor;
+  box-shadow: 0 0px 50px hsla(0, 0, 0, 0.5);
+  width: $menu-item-width;
+  padding: 36px 0;
+  position: absolute;
+  transform: translateY(-8%);
+  transition: all 400ms;
+  z-index: -1;
+}
+
+@media (max-width: $menu-width) {
+  .menu-container {
+    width: 94%;
+    flex-direction: column;
+  }
+
+  .menu-item--active {
+    width: 106%;
+    transform: translate(-2.9%, 0%);
+    padding: 0 7px;
+  }
+
+  .menu-item {
+    width: 100%;
+  }
+}
