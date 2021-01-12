@@ -1,16 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';    
-import axios from 'axios'; 
+import React from 'react';   
+import { fetchData, sendUpdatedData } from '../api/data';
 import MenuContainer from './MenuContainer';
 import Content from './Content';
 
-const API = 'https://plant-data-provider.herokuapp.com/';
-const DEFAULT_QUERY = 'data';
-const UPDATE_QUERY = 'update-data'
-
 class App extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       display: 'plants',
       isLoading: true,
@@ -18,38 +13,17 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({ isLoading: true });
-    this.fetchData();
-  }
-
-  fetchData = () =>  {
-    fetch(API + DEFAULT_QUERY)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ data, isLoading: false });
-    }); 
-  }
-
-  sendUpdatedData = newPatch => {
-    const headers = { 
-      'Content-Type': 'application/json', 
-      'Authorization': 'jwt-token'
-    };
-
-    axios.post(API + UPDATE_QUERY, { patch: newPatch }, { headers })
-      .then(res => {
-        this.fetchData();
-    })
+    const data = await fetchData();
+    this.setState({ data, isLoading: false });
   }
 
   getDisplay = display => this.setState({ display })
 
-  updatePatch = newPatch => {
+  updatePatch = async(newPatch) => {
     var patchIndex = this.state.data.vegPatches.findIndex(item => 
       item.name === newPatch.name);
-
-    this.sendUpdatedData(newPatch);
 
     this.setState(prevState => ({
       data: {   
@@ -59,11 +33,14 @@ class App extends React.Component {
         )
       }
     }))
+    
+    const data = await sendUpdatedData(newPatch);
+    this.setState({ data, isLoading: false });
   }
 
   render() {
     if (this.state.isLoading) {
-      return <p>Loading ...</p>;
+      return <p>Loading...</p>;
     }
     return (
       <div>
@@ -74,7 +51,6 @@ class App extends React.Component {
     )
   }
 }
+//"node server.js"
 
 export default App;
-
-ReactDOM.render(<App/>, document.getElementById('root'))
