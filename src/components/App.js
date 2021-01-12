@@ -51,6 +51,5 @@ class App extends React.Component {
     )
   }
 }
-//"node server.js"
 
 export default App;
